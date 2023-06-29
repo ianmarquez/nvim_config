@@ -97,6 +97,9 @@ return packer.startup(function(use)
   use("windwp/nvim-autopairs")
   use("windwp/nvim-ts-autotag")
 
+  -- tab navigation
+  use("romgrk/barbar.nvim")
+
   if packer_bootstrap then
     require("packer").sync()
   end
