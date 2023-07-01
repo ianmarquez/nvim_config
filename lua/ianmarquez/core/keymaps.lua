@@ -39,3 +39,6 @@ keymap.set("n", "<leader>tc", "<cmd>BufferCloseAllButCurrent<cr>")
 
 -- undotree
 keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<cr>")
+
+-- blamer
+keymap.set("n", "<leader>b", "<cmd>BlamerToggle<cr>")

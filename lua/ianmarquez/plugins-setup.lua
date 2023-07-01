@@ -118,6 +118,9 @@ return packer.startup(function(use)
 		end,
 	})
 
+	-- gitblame plugin
+	use("APZelos/blamer.nvim")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
