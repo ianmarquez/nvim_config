@@ -30,8 +30,12 @@ keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>")
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
 
+-- barbar
 keymap.set("n", "<leader>to", "<cmd>BufferOrderByDirectory<cr>")
 keymap.set("n", "<leader>th", "<cmd>BufferPrevious<cr>")
 keymap.set("n", "<leader>tl", "<cmd>BufferNext<cr>")
 keymap.set("n", "<leader>tx", "<cmd>BufferClose<cr>")
 keymap.set("n", "<leader>tc", "<cmd>BufferCloseAllButCurrent<cr>")
+
+-- undotree
+keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<cr>")
