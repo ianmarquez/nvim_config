@@ -16,3 +16,9 @@ require("ianmarquez.plugins.treesitter")
 require("ianmarquez.plugins.gitsigns")
 require("ianmarquez.plugins.undotree")
 require("ianmarquez.plugins.blamer")
+require("ianmarquez.plugins.nvim-dap")
+require("ianmarquez.plugins.barbar")
+
+-- https://github.com/neovim/neovim/issues/21749#issuecomment-1378720864
+-- Fix loading of json5
+table.insert(vim._so_trails, "/?.dylib")

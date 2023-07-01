@@ -123,6 +123,23 @@ return packer.startup(function(use)
 	-- gitblame plugin
 	use("APZelos/blamer.nvim")
 
+	-- debugger
+	use("mfussenegger/nvim-dap")
+	use("rcarriga/nvim-dap-ui")
+	use({ "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } })
+	use({
+		"microsoft/vscode-js-debug",
+		opt = true,
+		run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
+	})
+	use("theHamsta/nvim-dap-virtual-text")
+
+	-- json5
+	use({
+		"Joakker/lua-json5",
+		run = "./install.sh",
+	})
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

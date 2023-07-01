@@ -1,7 +1,7 @@
-local setup, nvimtree = pcall(require, 'nvim-tree')
+local setup, nvimtree = pcall(require, "nvim-tree")
 
 if not setup then
-  return
+	return
 end
 
 -- recommended settings from nvim-tree documentation
@@ -10,11 +10,15 @@ vim.g.loaded_netrwPlugin = 1
 vim.cmd([[ highlight NvimTreeIndentMarker guifg=#9afcb3 ]])
 
 nvimtree.setup({
-  actions = {
-    open_file = {
-      window_picker = {
-        enable = false,
-      }
-    }
-  },
+	actions = {
+		open_file = {
+			window_picker = {
+				enable = false,
+			},
+		},
+	},
 })
+
+local keymap = vim.keymap
+
+keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
