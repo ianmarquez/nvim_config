@@ -31,6 +31,8 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim")
 
 	use("Mofiqul/dracula.nvim") -- dracula color scheme
+	use("rebelot/kanagawa.nvim") -- kanagawa color scheme
+	use("folke/tokyonight.nvim") -- tokyonight color scheme
 
 	-- tmux & split window navigation
 	use("christoomey/vim-tmux-navigator")
