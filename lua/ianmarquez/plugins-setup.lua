@@ -140,6 +140,9 @@ return packer.startup(function(use)
 		run = "./install.sh",
 	})
 
+	-- floating terminal
+	use("voldikss/vim-floaterm")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
