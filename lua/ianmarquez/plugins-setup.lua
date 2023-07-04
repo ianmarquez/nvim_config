@@ -149,34 +149,20 @@ return packer.startup(function(use)
 		branch = "master",
 	})
 
+	-- nvim dashboard
 	use({
 		"glepnir/dashboard-nvim",
 		event = "VimEnter",
-		config = function()
-			require("dashboard").setup({
-				shortcut_type = "number",
-				change_to_vcs_root = true,
-				theme = "hyper",
-				config = {
-					week_header = {
-						enable = true,
-					},
-					shortcut = {
-						{ desc = "󰊳 Update", group = "@property", action = "PackerSync", key = "u" },
-						{
-							icon = " ",
-							icon_hl = "@variable",
-							desc = "Files",
-							group = "Label",
-							action = "Telescope find_files",
-							key = "f",
-						},
-					},
-				},
-			})
-		end,
-		requires = { "nvim-tree/nvim-web-devicons" },
 	})
+
+	-- tailwind colorizer
+	use("roobert/tailwindcss-colorizer-cmp.nvim")
+
+	-- colorizer
+	use("norcalli/nvim-colorizer.lua")
+
+	-- indent guides
+	use("lukas-reineke/indent-blankline.nvim")
 
 	if packer_bootstrap then
 		require("packer").sync()

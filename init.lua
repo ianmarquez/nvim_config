@@ -20,6 +20,9 @@ require("ianmarquez.plugins.nvim-dap")
 require("ianmarquez.plugins.barbar")
 require("ianmarquez.plugins.float-term")
 require("ianmarquez.plugins.dashboard")
+require("ianmarquez.plugins.colorizer")
+require("ianmarquez.plugins.tailwind-colorizer")
+require("ianmarquez.plugins.indent-blankline")
 -- https://github.com/neovim/neovim/issues/21749#issuecomment-1378720864
 -- Fix loading of json5
 table.insert(vim._so_trails, "/?.dylib")
