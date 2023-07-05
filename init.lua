@@ -1,7 +1,6 @@
 require("ianmarquez.plugins-setup")
 require("ianmarquez.core.options")
 require("ianmarquez.core.keymaps")
-require("ianmarquez.core.colorscheme")
 require("ianmarquez.plugins.comment")
 require("ianmarquez.plugins.nvim-tree")
 require("ianmarquez.plugins.lualine")
@@ -23,6 +22,7 @@ require("ianmarquez.plugins.dashboard")
 require("ianmarquez.plugins.colorizer")
 require("ianmarquez.plugins.tailwind-colorizer")
 require("ianmarquez.plugins.indent-blankline")
+require("ianmarquez.core.colorscheme")
 -- https://github.com/neovim/neovim/issues/21749#issuecomment-1378720864
 -- Fix loading of json5
 table.insert(vim._so_trails, "/?.dylib")

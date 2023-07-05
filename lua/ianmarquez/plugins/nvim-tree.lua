@@ -10,6 +10,9 @@ vim.g.loaded_netrwPlugin = 1
 vim.cmd([[ highlight NvimTreeIndentMarker guifg=#9afcb3 ]])
 
 nvimtree.setup({
+	renderer = {
+		indent_markers = { enable = true },
+	},
 	actions = {
 		open_file = {
 			window_picker = {
