@@ -11,7 +11,7 @@ vim.cmd([[highlight IndentBlanklineIndent guifg=#ff79c6 gui=nocombine]])
 
 indent_blankline.setup({
 	buftype_exclude = { "terminal" },
-	filetype_exclude = { "dashboard" },
+	filetype_exclude = { "dashboard", "NvimTree" },
 	show_current_context = true,
 	show_current_context_start = true,
 	show_end_of_line = true,
