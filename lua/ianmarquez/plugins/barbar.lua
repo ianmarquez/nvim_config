@@ -5,8 +5,7 @@ end
 
 barbar.setup({
 	highlight_visible = true,
-	maximum_padding = 2,
-	minimum_padding = 2,
+	hightlight_alternate = true,
 })
 
 local keymap = vim.keymap -- barbar
