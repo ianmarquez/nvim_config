@@ -161,6 +161,11 @@ return packer.startup(function(use)
 		end,
 	})
 
+	-- noice ui
+	use("MunifTanjim/nui.nvim")
+	use("rcarriga/nvim-notify")
+	use("folke/noice.nvim")
+
 	-- colorizer
 	use("norcalli/nvim-colorizer.lua")
 
