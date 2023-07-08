@@ -29,15 +29,11 @@ return packer.startup(function(use)
 
 	-- lua functions that many plugins use
 	use("nvim-lua/plenary.nvim")
+	-- icons
+	use("kyazdani42/nvim-web-devicons")
 
 	use("Mofiqul/dracula.nvim") -- dracula color scheme
-	use("rebelot/kanagawa.nvim") -- kanagawa color scheme
 	use("folke/tokyonight.nvim") -- tokyonight color scheme
-
-	-- tmux & split window navigation
-	use("christoomey/vim-tmux-navigator")
-
-	use("szw/vim-maximizer") -- maximizer and restores current window
 
 	-- essential plugins
 	use("tpope/vim-surround")
@@ -48,9 +44,6 @@ return packer.startup(function(use)
 
 	-- file explorer
 	use("nvim-tree/nvim-tree.lua")
-
-	-- icons
-	use("kyazdani42/nvim-web-devicons")
 
 	-- statusline
 	use("nvim-lualine/lualine.nvim")
@@ -111,14 +104,7 @@ return packer.startup(function(use)
 	use("romgrk/barbar.nvim")
 
 	-- which key cheat sheet
-	use({
-		"folke/which-key.nvim",
-		config = function()
-			vim.o.timeout = true
-			vim.o.timeoutlen = 300
-			require("which-key").setup()
-		end,
-	})
+	use("folke/which-key.nvim")
 
 	-- gitblame plugin
 	use("APZelos/blamer.nvim")
@@ -127,39 +113,10 @@ return packer.startup(function(use)
 	use("voldikss/vim-floaterm")
 
 	-- nvim multi cursor
-	use({
-		"mg979/vim-visual-multi",
-		branch = "master",
-	})
+	use({ "mg979/vim-visual-multi", branch = "master" })
 
 	-- nvim dashboard
-	use({
-		"glepnir/dashboard-nvim",
-		event = "VimEnter",
-		config = function()
-			require("dashboard").setup({
-				shortcut_type = "number",
-				change_to_vcs_root = true,
-				theme = "hyper",
-				config = {
-					week_header = {
-						enable = true,
-					},
-					shortcut = {
-						{ desc = "󰊳 Update", group = "@property", action = "PackerSync", key = "u" },
-						{
-							icon = " ",
-							icon_hl = "@variable",
-							desc = "Files",
-							group = "Label",
-							action = "Telescope find_files",
-							key = "f",
-						},
-					},
-				},
-			})
-		end,
-	})
+	use({ "glepnir/dashboard-nvim", event = "VimEnter" })
 
 	-- noice ui
 	use("MunifTanjim/nui.nvim")
