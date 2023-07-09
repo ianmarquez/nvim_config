@@ -69,7 +69,16 @@ lazy.setup({
 	"romgrk/barbar.nvim", -- tab navigation
 	"folke/which-key.nvim", -- which key cheat sheet
 	"APZelos/blamer.nvim", -- gitblame plugin
-	"voldikss/vim-floaterm", -- floating terminal
+	{
+		"voldikss/vim-floaterm",
+		init = function()
+			vim.g.floaterm_keymap_toggle = "<F1>"
+			vim.g.floaterm_width = 0.9
+			vim.g.floaterm_height = 0.8
+			vim.g.floatterm_wintitle = 0
+			vim.g.floaterm_autoclose = 1
+		end,
+	}, -- floating terminal
 	{ "mg979/vim-visual-multi", branch = "master" }, -- nvim multi cursor
 	{ "glepnir/dashboard-nvim", event = "VimEnter" }, -- nvim dashboard
 	-- noice ui
