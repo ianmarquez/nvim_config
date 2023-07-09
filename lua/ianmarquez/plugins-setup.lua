@@ -1,135 +1,80 @@
-local ensure_packer = function()
-	local fn = vim.fn
-	local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-	if fn.empty(fn.glob(install_path)) > 0 then
-		fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
-		vim.cmd([[packadd packer.nvim]])
-		return true
-	end
-	return false
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
+vim.opt.rtp:prepend(lazypath)
 
-local packer_bootstrap = ensure_packer()
-
--- Autocommand that reload neovim whenever you save this file
-vim.cmd([[ 
-augroup packer_user_config
-autocmd!
-autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
-augroup end
-]])
-
-local status, packer = pcall(require, "packer")
+local status, lazy = pcall(require, "lazy")
 if not status then
 	return
 end
 
-return packer.startup(function(use)
-	use("wbthomason/packer.nvim")
-
-	-- lua functions that many plugins use
-	use("nvim-lua/plenary.nvim")
-	-- icons
-	use("kyazdani42/nvim-web-devicons")
-
-	use("Mofiqul/dracula.nvim") -- dracula color scheme
-	use("folke/tokyonight.nvim") -- tokyonight color scheme
-
+lazy.setup({
+	"nvim-lua/plenary.nvim", -- lua functions that many plugins use
+	"kyazdani42/nvim-web-devicons", -- icons
+	"Mofiqul/dracula.nvim", -- dracula color scheme
+	"folke/tokyonight.nvim", -- tokyonight color scheme
+	"christoomey/vim-tmux-navigator", -- window navigation
 	-- essential plugins
-	use("tpope/vim-surround")
-	use("vim-scripts/ReplaceWithRegister")
-
-	-- commenting with gc
-	use("numToStr/Comment.nvim")
-
-	-- file explorer
-	use("nvim-tree/nvim-tree.lua")
-
-	-- statusline
-	use("nvim-lualine/lualine.nvim")
-
+	"tpope/vim-surround",
+	"vim-scripts/ReplaceWithRegister",
+	"numToStr/Comment.nvim", -- commenting with gc
+	"nvim-tree/nvim-tree.lua", -- file explorer
+	"nvim-lualine/lualine.nvim", -- statusline
 	-- autocompletion
-	use("hrsh7th/nvim-cmp")
-	use("hrsh7th/cmp-buffer")
-	use("hrsh7th/cmp-path")
-
+	"hrsh7th/nvim-cmp",
+	"hrsh7th/cmp-buffer",
+	"hrsh7th/cmp-path",
 	-- snippets
-	use("L3MON4D3/LuaSnip")
-	use("saadparwaiz1/cmp_luasnip")
-	use("rafamadriz/friendly-snippets")
-	use("avneesh0612/react-nextjs-snippets")
-
+	"L3MON4D3/LuaSnip",
+	"saadparwaiz1/cmp_luasnip",
+	"rafamadriz/friendly-snippets",
+	"avneesh0612/react-nextjs-snippets",
 	-- fuzzy finding
-	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency
-	use({
-		"nvim-telescope/telescope.nvim",
-		branch = "0.1.x",
-	})
-
-	-- undo tree
-	use("mbbill/undotree")
-
+	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+	{ "nvim-telescope/telescope.nvim", branch = "0.1.x" },
+	"mbbill/undotree", -- undo tree
 	-- managing and installing lsp servers, linters and formatters
-	use("williamboman/mason.nvim")
-	use("williamboman/mason-lspconfig.nvim")
-
+	"williamboman/mason.nvim",
+	"williamboman/mason-lspconfig.nvim",
 	-- configuring lsp servers
-	use("neovim/nvim-lspconfig")
-	use("hrsh7th/cmp-nvim-lsp")
-	use({ "glepnir/lspsaga.nvim", branch = "main" })
-	use("jose-elias-alvarez/typescript.nvim")
-	use("onsails/lspkind.nvim")
-
+	"neovim/nvim-lspconfig",
+	"hrsh7th/cmp-nvim-lsp",
+	{ "glepnir/lspsaga.nvim", branch = "main" },
+	"jose-elias-alvarez/typescript.nvim",
+	"onsails/lspkind.nvim",
 	-- formatting and linting
-	use("jose-elias-alvarez/null-ls.nvim")
-	use("jayp0521/mason-null-ls.nvim")
-
+	"jose-elias-alvarez/null-ls.nvim",
+	"jayp0521/mason-null-ls.nvim",
 	-- treesitter
-	use({
+	{
 		"nvim-treesitter/nvim-treesitter",
-		run = function()
+		build = function()
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
-	})
-	use("nvim-treesitter/nvim-treesitter-context") --tree sitter context
-
-	-- git signs plugin
-	use("lewis6991/gitsigns.nvim")
-
+	},
+	"nvim-treesitter/nvim-treesitter-context", --tree sitter context
+	"lewis6991/gitsigns.nvim", -- git signs plugin
 	-- auto closing
-	use("windwp/nvim-autopairs")
-	use("windwp/nvim-ts-autotag")
-
-	-- tab navigation
-	use("romgrk/barbar.nvim")
-
-	-- which key cheat sheet
-	use("folke/which-key.nvim")
-
-	-- gitblame plugin
-	use("APZelos/blamer.nvim")
-
-	-- floating terminal
-	use("voldikss/vim-floaterm")
-
-	-- nvim multi cursor
-	use({ "mg979/vim-visual-multi", branch = "master" })
-
-	-- nvim dashboard
-	use({ "glepnir/dashboard-nvim", event = "VimEnter" })
-
+	"windwp/nvim-autopairs",
+	"windwp/nvim-ts-autotag",
+	"romgrk/barbar.nvim", -- tab navigation
+	"folke/which-key.nvim", -- which key cheat sheet
+	"APZelos/blamer.nvim", -- gitblame plugin
+	"voldikss/vim-floaterm", -- floating terminal
+	{ "mg979/vim-visual-multi", branch = "master" }, -- nvim multi cursor
+	{ "glepnir/dashboard-nvim", event = "VimEnter" }, -- nvim dashboard
 	-- noice ui
-	use("MunifTanjim/nui.nvim")
-	use("rcarriga/nvim-notify")
-	use("folke/noice.nvim")
-
-	-- colorizer
-	use("norcalli/nvim-colorizer.lua")
-
-	-- indent guides
-	use("lukas-reineke/indent-blankline.nvim")
-
-	if packer_bootstrap then
-		require("packer").sync()
-	end
-end)
+	"MunifTanjim/nui.nvim",
+	"rcarriga/nvim-notify",
+	"folke/noice.nvim",
+	"norcalli/nvim-colorizer.lua", -- colorizer
+	"lukas-reineke/indent-blankline.nvim", -- indent guides
+})
