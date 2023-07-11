@@ -45,7 +45,7 @@ noice.setup({
 		view = "cmdline_popup", -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
 	},
 	messages = {
-		enabled = true,
+		enabled = false,
 	},
 	lsp = {
 		override = {
