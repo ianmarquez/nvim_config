@@ -33,11 +33,11 @@ lazy.setup({
 	"hrsh7th/cmp-buffer",
 	"hrsh7th/cmp-path",
 	"hrsh7th/cmp-cmdline",
+	"MunifTanjim/prettier.nvim",
 	-- snippets
 	"L3MON4D3/LuaSnip",
 	"saadparwaiz1/cmp_luasnip",
 	"rafamadriz/friendly-snippets",
-	"avneesh0612/react-nextjs-snippets",
 	-- fuzzy finding
 	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	{ "nvim-telescope/telescope.nvim", branch = "0.1.x" },
@@ -75,7 +75,7 @@ lazy.setup({
 			vim.g.floaterm_keymap_toggle = "<F1>"
 			vim.g.floaterm_width = 0.9
 			vim.g.floaterm_height = 0.8
-			vim.g.floatterm_wintitle = 0
+			vim.g.floatterm_wintitle = 1
 			vim.g.floaterm_autoclose = 1
 		end,
 	}, -- floating terminal

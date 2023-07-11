@@ -12,7 +12,7 @@ vim.cmd([[highlight IndentBlanklineIndent guifg=#ff4499 gui=nocombine]])
 
 indent_blankline.setup({
 	buftype_exclude = { "terminal" },
-	filetype_exclude = { "dashboard", "NvimTree", "help", "lspsagaoutline" },
+	filetype_exclude = { "dashboard", "NvimTree", "help", "lspsagaoutline", "lazy" },
 	show_current_context = true,
 	show_current_context_start = true,
 	show_end_of_line = true,
