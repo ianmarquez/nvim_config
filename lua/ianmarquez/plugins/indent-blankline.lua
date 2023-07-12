@@ -3,7 +3,6 @@ if not indent_blankline_setup then
 	return
 end
 
-vim.opt.listchars:append("eol:↴")
 vim.opt.list = true
 vim.opt.termguicolors = true
 
@@ -15,6 +14,5 @@ indent_blankline.setup({
 	filetype_exclude = { "dashboard", "NvimTree", "help", "lspsagaoutline", "lazy" },
 	show_current_context = true,
 	show_current_context_start = true,
-	show_end_of_line = true,
 	context_highlight_list = { "IndentBlanklineIndent" },
 })
