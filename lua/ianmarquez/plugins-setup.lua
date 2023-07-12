@@ -87,4 +87,5 @@ lazy.setup({
 	"folke/noice.nvim",
 	"norcalli/nvim-colorizer.lua", -- colorizer
 	"lukas-reineke/indent-blankline.nvim", -- indent guides
+	"andweeb/presence.nvim", -- discord presence
 })
