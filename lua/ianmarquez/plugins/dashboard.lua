@@ -9,6 +9,8 @@ dashboard.setup({
 	change_to_vcs_root = true,
 	theme = "hyper",
 	config = {
+		project = { enable = true, limit = 10, action = "Telescope find_files cwd=" },
+		mru = { limit = 10 },
 		week_header = {
 			enable = true,
 		},
