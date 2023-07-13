@@ -9,10 +9,10 @@ barbar.setup({
 	icons = {
 		pinned = { button = "󰐃", filename = true },
 	},
-	maximum_padding = 0,
 	sidebar_filetypes = {
 		NvimTree = true,
 		undotree = { text = "undotree" },
+		DiffviewFiles = true,
 	},
 })
 
