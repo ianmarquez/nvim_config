@@ -47,6 +47,7 @@ cmp.setup({
 	-- configure lspkind for vs-code like icons
 	formatting = {
 		format = lspkind.cmp_format({
+			mode = "text_symbol",
 			maxwidth = 60,
 			ellipsis_char = "...",
 		}),
