@@ -7,6 +7,7 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 keymap.set("i", "<C-c>", "<ESC>")
 
+keymap.set({ "n", "v", "i" }, "<leader>w", "<cmd>w<cr>")
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 keymap.set("n", "x", '"_x"')
 keymap.set("n", "J", "mzJ`z")
@@ -17,10 +18,10 @@ keymap.set("n", "N", "nzzzv")
 keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- window controls
-keymap.set("n", "<leader>wv", "<C-w>v") -- split window vertically
-keymap.set("n", "<leader>wh", "<C-w>s") -- split window horizontally
-keymap.set("n", "<leader>we", "<C-w>=") -- split windows equal width
-keymap.set("n", "<leader>wx", ":close<CR>") -- close current split window
+keymap.set("n", "<leader>bv", "<C-w>v") -- split window vertically
+keymap.set("n", "<leader>bh", "<C-w>s") -- split window horizontally
+keymap.set("n", "<leader>be", "<C-w>=") -- split windows equal width
+keymap.set("n", "<leader>bx", ":close<CR>") -- close current split window
 
 -- vim file explorer
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
