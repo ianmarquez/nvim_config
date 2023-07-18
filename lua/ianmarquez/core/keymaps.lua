@@ -7,7 +7,6 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 keymap.set("i", "<C-c>", "<ESC>")
 
-keymap.set({ "n", "v", "i" }, "<leader>w", "<cmd>w<cr>")
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 keymap.set("n", "x", '"_x"')
 keymap.set("n", "J", "mzJ`z")

@@ -21,6 +21,7 @@ lazy.setup({
 	"kyazdani42/nvim-web-devicons", -- icons
 	"Mofiqul/dracula.nvim", -- dracula color scheme
 	"folke/tokyonight.nvim", -- tokyonight color scheme
+	"olivercederborg/poimandres.nvim", -- poimandres color scheme
 	"christoomey/vim-tmux-navigator", -- window navigation
 	-- essential plugins
 	"tpope/vim-surround",
