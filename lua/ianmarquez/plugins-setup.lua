@@ -19,9 +19,9 @@ end
 lazy.setup({
 	"nvim-lua/plenary.nvim", -- lua functions that many plugins use
 	"kyazdani42/nvim-web-devicons", -- icons
-	"Mofiqul/dracula.nvim", -- dracula color scheme
-	"folke/tokyonight.nvim", -- tokyonight color scheme
-	"olivercederborg/poimandres.nvim", -- poimandres color scheme
+	{ "Mofiqul/dracula.nvim", lazy = true }, -- dracula color scheme
+	{ "folke/tokyonight.nvim", lazy = true }, -- tokyonight color scheme
+	{ "rebelot/kanagawa.nvim", lazy = true }, -- kanagawa color scheme
 	"christoomey/vim-tmux-navigator", -- window navigation
 	-- essential plugins
 	"tpope/vim-surround",
@@ -49,7 +49,6 @@ lazy.setup({
 	-- configuring lsp servers
 	"neovim/nvim-lspconfig",
 	"hrsh7th/cmp-nvim-lsp",
-	{ "glepnir/lspsaga.nvim", branch = "main" },
 	"jose-elias-alvarez/typescript.nvim",
 	"onsails/lspkind.nvim",
 	-- formatting and linting
