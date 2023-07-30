@@ -50,6 +50,8 @@ lazy.setup({
 	"neovim/nvim-lspconfig",
 	"hrsh7th/cmp-nvim-lsp",
 	"jose-elias-alvarez/typescript.nvim",
+	"pangloss/vim-javascript",
+	{ "evanleck/vim-svelte", branch = "main" },
 	"onsails/lspkind.nvim",
 	-- formatting and linting
 	"jose-elias-alvarez/null-ls.nvim",

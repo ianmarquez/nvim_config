@@ -7,7 +7,7 @@ barbar.setup({
 	animation = false,
 	highlight_visible = true,
 	hightlight_alternate = true,
-	icon_close_tab = "󰅚",
+	maximum_padding = 1,
 	icons = {
 		pinned = { button = "󰐃", filename = true },
 	},
