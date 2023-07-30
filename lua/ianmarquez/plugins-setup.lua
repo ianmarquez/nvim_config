@@ -49,8 +49,12 @@ lazy.setup({
 	-- configuring lsp servers
 	"neovim/nvim-lspconfig",
 	"hrsh7th/cmp-nvim-lsp",
-	"jose-elias-alvarez/typescript.nvim",
 	"pangloss/vim-javascript",
+	{
+		"pmizio/typescript-tools.nvim",
+		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		opts = {},
+	},
 	{ "evanleck/vim-svelte", branch = "main" },
 	"onsails/lspkind.nvim",
 	-- formatting and linting

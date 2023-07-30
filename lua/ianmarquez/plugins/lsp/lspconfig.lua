@@ -11,7 +11,7 @@ if not cmp_nvim_lsp_status then
 end
 
 -- import typescript plugin safely
-local typescript_setup, typescript = pcall(require, "typescript")
+local typescript_setup, typescript = pcall(require, "typescript-tools")
 if not typescript_setup then
 	return
 end
@@ -36,11 +36,8 @@ local on_attach = function(client, bufnr)
 	keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
 
 	-- typescript specific keymaps (e.g. rename file and update imports)
-	if client.name == "tsserver" then
-		keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
-		keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports (not in youtube nvim video)
-		keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables (not in youtube nvim video)
-	end
+	keymap.set("n", "<leader>oi", ":TSToolsSortImports<CR>") -- organize imports (not in youtube nvim video)
+	keymap.set("n", "<leader>ru", ":TSToolsRemoveUnusedImports<CR>") -- remove unused variables (not in youtube nvim video)
 end
 
 local capabilities = cmp_nvim_lsp.default_capabilities()
@@ -60,9 +57,18 @@ lspconfig["html"].setup({
 
 -- configure typescript server with plugin
 typescript.setup({
-	server = {
-		capabilities = capabilities,
-		on_attach = on_attach,
+	on_attach = on_attach,
+	settings = {
+		separate_diagnostic_server = true,
+		publish_diagnostic_on = "insert_leave",
+		tsserver_path = nil,
+		tsserver_max_memory = "auto",
+		complete_function_calls = false,
+		tsserver_file_preferences = {
+			includeInlayParameterNameHints = "all",
+			includeCompletionsForModuleExports = true,
+			quotePreference = "single",
+		},
 	},
 })
 
