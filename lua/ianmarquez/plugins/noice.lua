@@ -7,7 +7,7 @@ noice.setup({
 	views = {
 		cmdline_popup = {
 			position = {
-				row = 10,
+				row = 20,
 				col = "50%",
 			},
 			size = {
@@ -32,12 +32,6 @@ noice.setup({
 			win_options = {
 				winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
 			},
-		},
-	},
-	routes = {
-		{
-			view = "notify",
-			filter = { event = "msg_showmode" },
 		},
 	},
 	cmdline = {
