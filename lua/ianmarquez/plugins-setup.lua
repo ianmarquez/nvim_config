@@ -51,10 +51,14 @@ lazy.setup({
 	"hrsh7th/cmp-nvim-lsp",
 	"pangloss/vim-javascript",
 	{
-		"pmizio/typescript-tools.nvim",
-		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-		opts = {},
+		"nvimdev/lspsaga.nvim",
+		branch = "main",
+		requires = {
+			{ "nvim-tree/nvim-web-devicons" },
+			{ "nvim-treesitter/nvim-treesitter" },
+		},
 	},
+	"jose-elias-alvarez/typescript.nvim", -- additional functionality for typescript server (e.g. rename file & update imports)
 	{ "evanleck/vim-svelte", branch = "main" },
 	"onsails/lspkind.nvim",
 	-- formatting and linting
