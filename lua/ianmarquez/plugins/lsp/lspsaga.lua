@@ -9,7 +9,8 @@ saga.setup({
 	scroll_preview = { scroll_down = "<C-f>", scroll_up = "<C-b>" },
 	-- use enter to open file with definition preview
 	definition = {
-		edit = "<CR>",
+		open = "<CR>",
+		-- edit = "<CR>",
 	},
 	ui = {
 		colors = {
