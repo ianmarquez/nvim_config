@@ -10,6 +10,7 @@ end
 
 telescope.setup({
 	defaults = {
+		file_ignore_patterns = { "node_modules", "%.lock", "package.json" },
 		mappings = {
 			i = {
 				["<C-k>"] = actions.move_selection_previous,
