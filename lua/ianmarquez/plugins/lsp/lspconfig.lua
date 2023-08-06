@@ -11,7 +11,7 @@ if not cmp_nvim_lsp_status then
 end
 
 -- import typescript plugin safely
-local typescript_setup, typescript = pcall(require, "typescript")
+local typescript_setup, typescript = pcall(require, "typescript-tools")
 if not typescript_setup then
 	return
 end
@@ -21,7 +21,6 @@ local keymap = vim.keymap -- for conciseness
 local on_attach = function(client, bufnr)
 	-- keybind options
 	local opts = { noremap = true, silent = true, buffer = bufnr }
-
 	-- set keybinds
 	keymap.set("n", "gf", "<cmd>Lspsaga finder<CR>", opts) -- show definition, references
 	keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts) -- got to declaration
@@ -38,9 +37,9 @@ local on_attach = function(client, bufnr)
 
 	-- typescript specific keymaps (e.g. rename file and update imports)
 	if client.name == "tsserver" then
-		keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
-		keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports (not in youtube nvim video)
-		keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables (not in youtube nvim video)
+		keymap.set("n", "<leader>tm", ":TSToolsAddMissingImports<CR>") -- rename file and update imports
+		keymap.set("n", "<leader>oi", ":TSToolsSortImports<CR>") -- organize imports (not in youtube nvim video)
+		keymap.set("n", "<leader>ru", ":TSToolsRemoveUnusedImports<CR>") -- remove unused variables (not in youtube nvim video)
 	end
 end
 
@@ -61,9 +60,15 @@ lspconfig["html"].setup({
 
 -- configure typescript server with plugin
 typescript.setup({
-	server = {
-		capabilities = capabilities,
-		on_attach = on_attach,
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = {
+		tsserver_file_preferences = {
+			includeInlayParameterNameHints = "all",
+			includeCompletionsForModuleExports = true,
+			importModuleSpecifierPreference = "non-relative",
+			quotePreference = "single",
+		},
 	},
 })
 

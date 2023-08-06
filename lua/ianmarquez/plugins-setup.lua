@@ -61,7 +61,11 @@ lazy.setup({
 		"nvimdev/lspsaga.nvim",
 		branch = "main",
 	},
-	"jose-elias-alvarez/typescript.nvim", -- additional functionality for typescript server (e.g. rename file & update imports)
+	{
+		"pmizio/typescript-tools.nvim",
+		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		opts = {},
+	}, -- additional functionality for typescript server (e.g. rename file & update imports)
 	{ "evanleck/vim-svelte", branch = "main" },
 	"onsails/lspkind.nvim",
 	-- formatting and linting
