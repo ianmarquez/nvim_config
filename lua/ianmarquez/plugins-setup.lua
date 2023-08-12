@@ -22,6 +22,7 @@ lazy.setup({
 	{ "Mofiqul/dracula.nvim", lazy = true }, -- dracula color scheme
 	{ "folke/tokyonight.nvim", lazy = true }, -- tokyonight color scheme
 	{ "rebelot/kanagawa.nvim", lazy = true }, -- kanagawa color scheme
+	{ "shaunsingh/nord.nvim", lazy = true }, -- nord color scheme
 	"christoomey/vim-tmux-navigator", -- window navigation
 	-- essential plugins
 	"tpope/vim-surround",

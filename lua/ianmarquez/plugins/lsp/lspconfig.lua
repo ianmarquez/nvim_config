@@ -36,11 +36,9 @@ local on_attach = function(client, bufnr)
 	keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<CR>", opts) -- see outline on right hand side
 
 	-- typescript specific keymaps (e.g. rename file and update imports)
-	if client.name == "tsserver" then
-		keymap.set("n", "<leader>tm", ":TSToolsAddMissingImports<CR>") -- rename file and update imports
-		keymap.set("n", "<leader>oi", ":TSToolsSortImports<CR>") -- organize imports (not in youtube nvim video)
-		keymap.set("n", "<leader>ru", ":TSToolsRemoveUnusedImports<CR>") -- remove unused variables (not in youtube nvim video)
-	end
+	keymap.set("n", "<leader>tm", ":TSToolsAddMissingImports<CR>") -- rename file and update imports
+	keymap.set("n", "<leader>oi", ":TSToolsSortImports<CR>") -- organize imports (not in youtube nvim video)
+	keymap.set("n", "<leader>ru", ":TSToolsRemoveUnusedImports<CR>") -- remove unused variables (not in youtube nvim video)
 end
 
 local capabilities = cmp_nvim_lsp.default_capabilities()
