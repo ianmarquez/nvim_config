@@ -8,6 +8,9 @@ end
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- change color for arrows in tree to light blue
+vim.cmd([[ highlight NvimTreeIndentMarker guifg=#f8f8f2 ]])
+
 nvimtree.setup({
 	update_focused_file = {
 		enable = true,
