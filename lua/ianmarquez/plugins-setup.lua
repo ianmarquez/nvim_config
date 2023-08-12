@@ -54,6 +54,7 @@ lazy.setup({
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
 	},
+	"nvim-treesitter/nvim-treesitter-context", --tree sitter context
 	-- configuring lsp servers
 	"neovim/nvim-lspconfig",
 	"hrsh7th/cmp-nvim-lsp",
@@ -72,7 +73,6 @@ lazy.setup({
 	-- formatting and linting
 	"jose-elias-alvarez/null-ls.nvim",
 	"jayp0521/mason-null-ls.nvim",
-	"nvim-treesitter/nvim-treesitter-context", --tree sitter context
 	"lewis6991/gitsigns.nvim", -- git signs plugin
 	-- auto closing
 	"windwp/nvim-autopairs",
