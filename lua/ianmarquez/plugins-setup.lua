@@ -66,7 +66,7 @@ lazy.setup({
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
 	},
-	"nvim-treesitter/nvim-treesitter-context", --tree sitter context
+	-- "nvim-treesitter/nvim-treesitter-context", --tree sitter context
 	-- configuring lsp servers
 	"neovim/nvim-lspconfig",
 	"hrsh7th/cmp-nvim-lsp",
