@@ -8,6 +8,11 @@ if not actions_setup then
 	return
 end
 
+local telecope_neo_clip_setup, telecope_neo_clip = pcall(require, "neoclip")
+if not telecope_neo_clip_setup then
+	return
+end
+
 telescope.setup({
 	defaults = {
 		file_ignore_patterns = { "node_modules", "%.lock", "package.json" },
@@ -19,9 +24,23 @@ telescope.setup({
 			},
 		},
 	},
+	extensions = {
+		undo = {
+			mappings = {
+				i = {
+					["<cr>"] = require("telescope-undo.actions").yank_additions,
+					["<C-cr>"] = require("telescope-undo.actions").yank_deletions,
+					["<S-cr>"] = require("telescope-undo.actions").restore,
+				},
+			},
+		},
+	},
 })
 
+telecope_neo_clip.setup()
 telescope.load_extension("fzf")
+telescope.load_extension("undo")
+telescope.load_extension("neoclip")
 
 local keymap = vim.keymap
 -- telescope
@@ -31,3 +50,6 @@ keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
 keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>")
+keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
+keymap.set("n", "<leader>o", "<cmd>Telescope lsp_document_symbols<cr>")
+keymap.set("n", "<leader>fr", "<cmd>Telescope neoclip<cr>")

@@ -41,9 +41,21 @@ lazy.setup({
 	"saadparwaiz1/cmp_luasnip",
 	"rafamadriz/friendly-snippets",
 	-- fuzzy finding
-	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-	{ "nvim-telescope/telescope.nvim", branch = "0.1.x" },
-	"mbbill/undotree", -- undo tree
+	{
+		"nvim-telescope/telescope.nvim",
+		branch = "0.1.x",
+		dependencies = {
+			"nvim-telescope/telescope-fzf-native.nvim",
+			"debugloop/telescope-undo.nvim",
+		},
+	},
+	{
+		"AckslD/nvim-neoclip.lua",
+		dependencies = {
+			{ "kkharji/sqlite.lua", module = "sqlite" },
+			{ "nvim-telescope/telescope.nvim" },
+		},
+	},
 	-- managing and installing lsp servers, linters and formatters
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
