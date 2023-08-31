@@ -112,6 +112,5 @@ lazy.setup({
 	"lukas-reineke/indent-blankline.nvim", -- indent guides
 	"andweeb/presence.nvim", -- discord presence
 	"sindrets/diffview.nvim", -- diff tool
-	"ggandor/leap.nvim", -- jump to line plugin
 	"Exafunction/codeium.vim", -- codium
 })
