@@ -31,4 +31,5 @@ nvimtree.setup({
 
 local keymap = vim.keymap
 
+-- vim file explorer
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")

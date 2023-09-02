@@ -21,26 +21,3 @@ keymap.set("n", "<leader>bv", "<C-w>v") -- split window vertically
 keymap.set("n", "<leader>bh", "<C-w>s") -- split window horizontally
 keymap.set("n", "<leader>be", "<C-w>=") -- split windows equal width
 keymap.set("n", "<leader>bx", ":close<CR>") -- close current split window
-
--- vim file explorer
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
-
--- telescope
-keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>")
-keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>")
-keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
-keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
-keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
-
--- barbar
-keymap.set("n", "<leader>to", "<cmd>BufferOrderByDirectory<cr>")
-keymap.set("n", "<leader>th", "<cmd>BufferPrevious<cr>")
-keymap.set("n", "<leader>tl", "<cmd>BufferNext<cr>")
-keymap.set("n", "<leader>tx", "<cmd>BufferClose<cr>")
-keymap.set("n", "<leader>tc", "<cmd>BufferCloseAllButCurrent<cr>")
-
--- undotree
-keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<cr>")
-
--- blamer
-keymap.set("n", "<leader>gb", "<cmd>BlamerToggle<cr>")

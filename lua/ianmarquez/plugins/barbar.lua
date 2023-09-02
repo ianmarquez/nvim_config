@@ -20,12 +20,15 @@ barbar.setup({
 
 local keymap = vim.keymap -- barbar
 
+-- barbar
 keymap.set("n", "<leader>to", "<cmd>BufferOrderByDirectory<cr>")
 keymap.set("n", "<S-l>", "<cmd>BufferNext<cr>")
 keymap.set("n", "<S-h>", "<cmd>BufferPrev<cr>")
 keymap.set("n", "<C-x>", "<cmd>BufferClose<cr>")
 keymap.set("n", "<leader>tc", "<cmd>BufferCloseAllButCurrentOrPinned<cr>")
 keymap.set("n", "<leader>ta", "<cmd>BufferWipeout<cr>")
+keymap.set("n", "<leader>tx", "<cmd>BufferClose<cr>")
+keymap.set("n", "<leader>tf", "<cmd>BufferClose!<cr>") -- force close
 keymap.set("n", "<C-p>", "<Cmd>BufferPin<CR>")
 keymap.set({ "n", "v" }, "<A-1>", " <Cmd>BufferGoto 1<CR>")
 keymap.set({ "n", "v" }, "<A-2>", " <Cmd>BufferGoto 2<CR>")

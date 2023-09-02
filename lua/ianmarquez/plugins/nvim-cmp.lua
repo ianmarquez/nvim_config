@@ -28,7 +28,7 @@ cmp.setup({
 		["<Tab>"] = cmp.mapping.select_next_item(), -- next suggestion
 		["<S-Tab>"] = cmp.mapping.select_prev_item(), -- prev suggestion
 		["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
-		["<q>"] = cmp.mapping.abort(), -- close completion window
+		["<C-q>"] = cmp.mapping.abort(), -- close completion window
 		["<CR>"] = cmp.mapping.confirm({ select = false }),
 	}),
 	window = {
