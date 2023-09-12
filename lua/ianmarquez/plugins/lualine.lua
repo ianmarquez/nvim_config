@@ -1,14 +1,27 @@
-local status, lualine = pcall(require, "lualine")
-if not status then
-	return
-end
+return {
+	"nvim-lualine/lualine.nvim",
+	dependencies = { "nvim-tree/nvim-web-devicons" },
+	config = function()
+		local lualine = require("lualine")
+		local lazy_status = require("lazy.status") -- to configure lazy pending updates count
+		local lualine_dracula = require("lualine.themes.dracula")
 
-local lualine_dracula = require("lualine.themes.dracula")
--- local lualine_palenight = require("lualine.themes.palenight")
-
-lualine.setup({
-	options = {
-		theme = lualine_dracula,
-		-- theme = lualine_palenight,
-	},
-})
+		lualine.setup({
+			options = {
+				theme = lualine_dracula,
+			},
+			sections = {
+				lualine_x = {
+					{
+						lazy_status.updates,
+						cond = lazy_status.has_updates,
+						color = { fg = "#ff9e64" },
+					},
+					{ "encoding" },
+					{ "fileformat" },
+					{ "filetype" },
+				},
+			},
+		})
+	end,
+}
