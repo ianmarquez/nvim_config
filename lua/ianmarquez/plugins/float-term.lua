@@ -1,7 +1,7 @@
 return {
 	"voldikss/vim-floaterm",
 	keys = {
-		{ "<leader>tt", "<cmd>FloatermToggle<cr>" },
+		{ "<F1>", "<cmd>FloatermToggle<cr>" },
 		{ "<leader>tg", "<cmd>FloatermNew lazygit<cr>" },
 		{ "<leader>tn", "<cmd>FloatermNew nvimtree<cr>" },
 	},
@@ -14,7 +14,7 @@ return {
 	end,
 	config = function()
 		local keymap = vim.keymap
-		keymap.set("n", "<leader>tt", "<cmd>FloatermNew<cr>")
+		keymap.set("n", "<F1>", "<cmd>FloatermNew<cr>")
 		keymap.set("n", "<leader>tg", "<cmd>FloatermNew lazygit<cr>")
 		keymap.set("n", "<leader>tn", "<cmd>FloatermNext<cr>")
 	end,

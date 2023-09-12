@@ -3,7 +3,6 @@ return {
 	event = "VimEnter",
 	config = function()
 		vim.g.dashboard_default_executive = "telescope"
-
 		local dashboard = require("dashboard")
 		dashboard.setup({
 			shortcut_type = "number",

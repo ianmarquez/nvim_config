@@ -18,9 +18,8 @@ return {
 			},
 			show_trailing_blankline_indent = false,
 			buftype_exclude = { "terminal" },
-			filetype_exclude = { "alpha", "NvimTree", "help", "lspsagaoutline", "lazy", "DiffviewFiles" },
+			filetype_exclude = { "NvimTree", "help", "lazy", "DiffviewFiles", "LuaLine" },
 			show_current_context = true,
-			-- show_current_context_start = true,
 			context_highlight_list = { "IndentBlanklineIndent" },
 		})
 	end,
