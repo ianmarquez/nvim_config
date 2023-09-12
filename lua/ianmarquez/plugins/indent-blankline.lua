@@ -1,5 +1,6 @@
 return {
 	"lukas-reineke/indent-blankline.nvim", -- indent guides
+	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		local indent_blankline = require("indent_blankline")
 
