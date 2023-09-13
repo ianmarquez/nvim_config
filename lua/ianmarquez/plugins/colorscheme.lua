@@ -10,11 +10,17 @@ return {
 	{
 		"rebelot/kanagawa.nvim",
 		lazy = true,
-		config = true,
+		config = function()
+			-- load the colorscheme here
+			-- vim.cmd([[colorscheme kanagawa-wave]])
+		end,
 	},
 	{
 		"folke/tokyonight.nvim",
 		lazy = true,
-		config = true,
+		config = function()
+			-- load the colorscheme here
+			-- vim.cmd([[colorscheme tokyonight-moon]])
+		end,
 	},
 }

@@ -7,7 +7,8 @@ return {
 			animation = false,
 			highlight_visible = true,
 			hightlight_alternate = true,
-			maximum_padding = 1,
+			maximum_padding = 2,
+			insert_at_start = true,
 			icons = {
 				pinned = { button = "󰐃", filename = true },
 			},
