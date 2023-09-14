@@ -7,7 +7,7 @@ return {
 		local typescript_tools = require("typescript-tools")
 		local opts = { noremap = true, silent = true }
 		typescript_tools.setup({
-			on_attach = function(client, bufnr)
+			on_attach = function(_, bufnr)
 				opts.buffer = bufnr
 				local keymap = vim.keymap
 
