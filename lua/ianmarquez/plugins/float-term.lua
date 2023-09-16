@@ -13,9 +13,16 @@ return {
 		vim.g.floaterm_autoclose = 1
 	end,
 	config = function()
+		local opts = { noremap = true, silent = true }
 		local keymap = vim.keymap
-		keymap.set("n", "<F1>", ":FloatermToggle<cr>")
-		keymap.set("n", "<leader>tn", ":FloatermNew<cr>")
-		keymap.set("n", "<leader>tg", ":FloatermNew lazygit<cr>")
+
+		opts.desc = "Toggle Floaterm"
+		keymap.set("n", "<F1>", ":FloatermToggle<cr>", opts)
+
+		opts.desc = "New Floaterm"
+		keymap.set("n", "<leader>tn", ":FloatermNew<cr>", opts)
+
+		opts.desc = "Open lazygit"
+		keymap.set("n", "<leader>tg", ":FloatermNew lazygit<cr>", opts)
 	end,
 }

@@ -30,8 +30,12 @@ return {
 		})
 
 		local keymap = vim.keymap
-
+		local opts = { noremap = true, silent = true }
 		-- vim file explorer
-		keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+		opts.desc = "File Explorer"
+		keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+
+		opts.desc = "Refresh File Explorer"
+		keymap.set("n", "<leader>tr", ":NvimTreeRefresh<CR>", opts)
 	end,
 }

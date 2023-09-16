@@ -20,25 +20,34 @@ return {
 		})
 
 		local keymap = vim.keymap -- barbar
+		local opts = { noremap = true, silent = true }
+
 		-- barbar
-		keymap.set("n", "<leader>to", "<cmd>BufferOrderByDirectory<cr>")
-		keymap.set("n", "<S-l>", "<cmd>BufferNext<cr>")
-		keymap.set("n", "<S-h>", "<cmd>BufferPrev<cr>")
-		keymap.set("n", "<C-x>", "<cmd>BufferClose<cr>")
-		keymap.set("n", "<leader>tc", "<cmd>BufferCloseAllButCurrentOrPinned<cr>")
-		keymap.set("n", "<leader>ta", "<cmd>BufferWipeout<cr>")
-		keymap.set("n", "<leader>tx", "<cmd>BufferClose<cr>")
-		keymap.set("n", "<leader>tf", "<cmd>BufferClose!<cr>") -- force close
-		keymap.set("n", "<C-p>", "<Cmd>BufferPin<CR>")
-		keymap.set({ "n", "v" }, "<A-1>", " <Cmd>BufferGoto 1<CR>")
-		keymap.set({ "n", "v" }, "<A-2>", " <Cmd>BufferGoto 2<CR>")
-		keymap.set({ "n", "v" }, "<A-3>", " <Cmd>BufferGoto 3<CR>")
-		keymap.set({ "n", "v" }, "<A-4>", " <Cmd>BufferGoto 4<CR>")
-		keymap.set({ "n", "v" }, "<A-5>", " <Cmd>BufferGoto 5<CR>")
-		keymap.set({ "n", "v" }, "<A-6>", " <Cmd>BufferGoto 6<CR>")
-		keymap.set({ "n", "v" }, "<A-7>", " <Cmd>BufferGoto 7<CR>")
-		keymap.set({ "n", "v" }, "<A-8>", " <Cmd>BufferGoto 8<CR>")
-		keymap.set({ "n", "v" }, "<A-9>", " <Cmd>BufferGoto 9<CR>")
-		keymap.set({ "n", "v" }, "<A-0>", " <Cmd>BufferLast<CR>")
+		opts.desc = "Order Buffer By Directory"
+		keymap.set("n", "<leader>to", "<cmd>BufferOrderByDirectory<cr>", opts)
+
+		opts.desc = "Next Buffer"
+		keymap.set("n", "<S-l>", "<cmd>BufferNext<cr>", opts)
+
+		opts.desc = "Previous Buffer"
+		keymap.set("n", "<S-h>", "<cmd>BufferPrev<cr>", opts)
+
+		opts.desc = "Close Buffer"
+		keymap.set("n", "<C-x>", "<cmd>BufferClose<cr>", opts)
+
+		opts.desc = "Close All Buffers But Current or Pinned"
+		keymap.set("n", "<leader>tc", "<cmd>BufferCloseAllButCurrentOrPinned<cr>", opts)
+
+		opts.desc = "Close All Open Buffers"
+		keymap.set("n", "<leader>ta", "<cmd>BufferWipeout<cr>", opts)
+
+		opts.desc = "Close Current Buffer"
+		keymap.set("n", "<leader>tx", "<cmd>BufferClose<cr>", opts)
+
+		opts.desc = "Force Close Current Buffer"
+		keymap.set("n", "<leader>tf", "<cmd>BufferClose!<cr>", opts) -- force close
+
+		opts.desc = "Pin Current Buffer"
+		keymap.set("n", "<C-p>", "<Cmd>BufferPin<CR>", opts)
 	end,
 }

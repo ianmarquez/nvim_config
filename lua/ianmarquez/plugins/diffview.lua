@@ -6,7 +6,12 @@ return {
 	},
 	config = function()
 		local keymap = vim.keymap
-		keymap.set("n", "<leader>do", ":DiffviewOpen<cr>") -- open diffview
-		keymap.set("n", "<leader>dx", ":DiffviewClose<cr>") -- close diffview
+		local opts = { noremap = true, silent = true }
+
+		opts.desc = "Open Diffview"
+		keymap.set("n", "<leader>do", ":DiffviewOpen<cr>", opts) -- open diffview
+
+		opts.desc = "Close Diffview"
+		keymap.set("n", "<leader>dx", ":DiffviewClose<cr>", opts) -- close diffview
 	end,
 }
