@@ -11,11 +11,11 @@ return {
 			views = {
 				cmdline_popup = {
 					position = {
-						row = 25,
+						row = 10,
 						col = "50%",
 					},
 					size = {
-						width = 60,
+						width = 50,
 						height = "auto",
 					},
 				},
