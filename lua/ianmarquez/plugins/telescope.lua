@@ -14,6 +14,8 @@ return {
 			defaults = {
 				file_ignore_patterns = { "node_modules", "%.lock" },
 				sorting_strategy = "ascending",
+				prompt_prefix = " ",
+				selection_caret = " ",
 				layout_config = {
 					prompt_position = "top",
 				},

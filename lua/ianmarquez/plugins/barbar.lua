@@ -4,10 +4,11 @@ return {
 	config = function()
 		local barbar = require("barbar")
 		barbar.setup({
+			clickable = false,
 			animation = false,
 			highlight_visible = true,
 			hightlight_alternate = true,
-			maximum_padding = 2,
+			maximum_padding = 1,
 			insert_at_start = true,
 			icons = {
 				pinned = { button = "󰐃", filename = true },
