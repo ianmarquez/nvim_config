@@ -13,6 +13,10 @@ return {
 		telescope.setup({
 			defaults = {
 				file_ignore_patterns = { "node_modules", "%.lock" },
+				sorting_strategy = "ascending",
+				layout_config = {
+					prompt_position = "top",
+				},
 				mappings = {
 					i = {
 						["<C-k>"] = actions.move_selection_previous,
@@ -36,7 +40,7 @@ return {
 		keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", opts)
 
 		opts.desc = "Find In Open Buffers"
-		keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
+		keymap.set("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
 
 		opts.desc = "Find Files"
 		keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
