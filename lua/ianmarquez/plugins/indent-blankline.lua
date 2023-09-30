@@ -1,8 +1,9 @@
 return {
 	"lukas-reineke/indent-blankline.nvim", -- indent guides
 	event = { "BufReadPre", "BufNewFile" },
+	main = "ibl",
 	config = function()
-		local indent_blankline = require("indent_blankline")
+		local indent_blankline = require("ibl")
 
 		vim.opt.list = true
 		vim.opt.termguicolors = true
@@ -10,17 +11,13 @@ return {
 		vim.cmd([[highlight IndentBlanklineIndent guifg=#ff79c6 gui=nocombine]]) -- dracula
 		vim.cmd([[highlight IndentBlanklineIndent1 guifg=#6272A4 gui=nocombine]])
 		-- vim.cmd([[highlight IndentBlanklineIndent guifg=#ff4499 gui=nocombine]]) -- tokyonight
-
 		indent_blankline.setup({
-			space_char_blankline = " ",
-			char_highlight_list = {
-				"IndentBlanklineIndent1",
+			indent = { tab_char = "│", space_char = " ", highlight = "IndentBlanklineIndent1" },
+			scope = { char = "│", highlight = "IndentBlanklineIndent" },
+			exclude = {
+				filetypes = { "NvimTree", "help", "lazy", "DiffviewFiles", "LuaLine", "mason" },
+				buftypes = { "terminal" },
 			},
-			show_trailing_blankline_indent = false,
-			buftype_exclude = { "terminal" },
-			filetype_exclude = { "NvimTree", "help", "lazy", "DiffviewFiles", "LuaLine", "mason" },
-			show_current_context = true,
-			context_highlight_list = { "IndentBlanklineIndent" },
 		})
 	end,
 }
