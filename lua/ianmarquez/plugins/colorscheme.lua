@@ -1,9 +1,10 @@
 return {
 	{
 		"Mofiqul/dracula.nvim",
+		priority = 1000,
 		config = function()
 			-- load the colorscheme here
-			-- vim.cmd([[colorscheme dracula]])
+			vim.cmd([[colorscheme dracula]])
 		end,
 	},
 	{
@@ -11,7 +12,7 @@ return {
 		name = "rose-pine",
 		config = function()
 			-- load the colorscheme here
-			vim.cmd([[colorscheme rose-pine-moon]])
+			-- vim.cmd([[colorscheme rose-pine-moon]])
 		end,
 	},
 }
