@@ -7,6 +7,8 @@ return {
 	},
 	config = function()
 		local noice = require("noice")
+		local keymap = vim.keymap
+		local opts = { noremap = true, silent = true }
 		noice.setup({
 			views = {
 				cmdline_popup = {
@@ -42,8 +44,17 @@ return {
 				enabled = true, -- enables the Noice cmdline UI
 				view = "cmdline_popup", -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
 			},
+			commands = {
+				history = {
+					view = "popup",
+				},
+			},
 			messages = {
 				enabled = false,
+			},
+			notify = {
+				enabled = true,
+				view = "notify",
 			},
 			lsp = {
 				override = {
@@ -59,5 +70,12 @@ return {
 				lsp_doc_border = true, -- add a border to hover docs and signature help
 			},
 		})
+
+		-- keybindings
+		opts.desc = "Open notification history"
+		keymap.set("n", "<leader>no", "<cmd>Noice<CR>", opts)
+
+		opts.desc = "Open error notifications"
+		keymap.set("n", "<leader>ne", "<cmd>Noice errors<CR>", opts)
 	end,
 }
