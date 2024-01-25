@@ -5,6 +5,7 @@ return {
 		"nvim-lua/plenary.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		"nvim-tree/nvim-web-devicons",
+		"andrew-george/telescope-themes",
 	},
 	config = function()
 		local telescope = require("telescope")
@@ -30,6 +31,7 @@ return {
 		})
 
 		telescope.load_extension("fzf")
+		telescope.load_extension("themes")
 
 		local keymap = vim.keymap
 		local opts = { noremap = true, silent = true }
@@ -52,6 +54,9 @@ return {
 
 		opts.desc = "Find Keymaps"
 		keymap.set("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", opts)
+
+		opts.desc = "Switch Themes"
+		keymap.set("n", "<leader>ft", "<cmd>Telescope themes<cr>", opts)
 
 		opts.desc = "Find Symbols in Current File"
 		keymap.set("n", "<leader>o", "<cmd>Telescope lsp_document_symbols<cr>", opts)

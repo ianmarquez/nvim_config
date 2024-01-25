@@ -7,9 +7,10 @@ return {
 			clickable = false,
 			animation = false,
 			highlight_visible = true,
-			hightlight_alternate = true,
+			highlight_alternate = false,
 			maximum_padding = 1,
 			insert_at_start = true,
+			tab_pages = true,
 			icons = {
 				pinned = { button = "󰐃", filename = true },
 			},
