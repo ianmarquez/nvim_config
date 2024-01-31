@@ -32,6 +32,7 @@ return {
 
 		telescope.load_extension("fzf")
 		telescope.load_extension("themes")
+		telescope.load_extension("noice")
 
 		local keymap = vim.keymap
 		local opts = { noremap = true, silent = true }
@@ -44,7 +45,7 @@ return {
 		keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", opts)
 
 		opts.desc = "Find In Open Buffers"
-		keymap.set("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
+		keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
 
 		opts.desc = "Find Files"
 		keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
@@ -60,5 +61,8 @@ return {
 
 		opts.desc = "Find Symbols in Current File"
 		keymap.set("n", "<leader>o", "<cmd>Telescope lsp_document_symbols<cr>", opts)
+
+		opts.desc = "Find Noice Notifications"
+		keymap.set("n", "<leader>fn", "<cmd>Telescope noice<cr>", opts)
 	end,
 }

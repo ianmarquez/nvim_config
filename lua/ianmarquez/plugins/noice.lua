@@ -44,14 +44,6 @@ return {
 				enabled = true, -- enables the Noice cmdline UI
 				view = "cmdline_popup", -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
 			},
-			commands = {
-				history = {
-					view = "popup",
-				},
-			},
-			messages = {
-				enabled = false,
-			},
 			notify = {
 				enabled = true,
 				view = "notify",
@@ -74,6 +66,9 @@ return {
 		-- keybindings
 		opts.desc = "Open notification history"
 		keymap.set("n", "<leader>no", "<cmd>Noice<CR>", opts)
+
+		opts.desc = "Dismiss all notifications"
+		keymap.set("n", "<leader>nd", "<cmd>Noice dismiss<CR>", opts)
 
 		opts.desc = "Open error notifications"
 		keymap.set("n", "<leader>ne", "<cmd>Noice errors<CR>", opts)
