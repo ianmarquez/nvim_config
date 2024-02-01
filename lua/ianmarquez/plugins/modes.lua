@@ -4,8 +4,10 @@ return {
 	config = function()
 		require("modes").setup({
 			colors = {
-				insert = "#8BE9FD",
+				copy = "#BD93F9",
+				insert = "#50FA7B",
 				visual = "#F1FA8C",
+				delete = "#FF5555",
 			},
 			line_opacity = 0.30,
 			set_cursor = true,

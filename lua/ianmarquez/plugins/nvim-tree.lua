@@ -16,6 +16,9 @@ return {
 				enable = true,
 				update_root = true,
 			},
+			view = {
+				width = 40,
+			},
 			renderer = {
 				indent_markers = { enable = true },
 				root_folder_label = false,
