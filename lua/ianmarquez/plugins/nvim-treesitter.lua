@@ -6,6 +6,7 @@ return -- treesitter
 	dependencies = {
 		"windwp/nvim-ts-autotag",
 	},
+	-- commit = "364b86e",
 	config = function()
 		local treesitter = require("nvim-treesitter.configs")
 		treesitter.setup({
