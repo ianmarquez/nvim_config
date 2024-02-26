@@ -1,10 +1,13 @@
 return {
 	"nvimtools/none-ls.nvim", -- configure formatters & linters
+	dependencies = {
+		"nvimtools/none-ls-extras.nvim",
+	},
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		-- import null-ls plugin
 		local none_ls = require("null-ls")
-
+		local eslint_d = require("none-ls.diagnostics.eslint_d")
 		local none_ls_utils = require("null-ls.utils")
 
 		-- for conciseness
@@ -23,11 +26,7 @@ return {
 					extra_filetypes = { "svelte" },
 				}), -- js/ts formatter
 				formatting.stylua, -- lua formatter
-				diagnostics.eslint_d.with({ -- js/ts linter
-					condition = function(utils)
-						return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" }) -- only enable if root has .eslintrc.js or .eslintrc.cjs
-					end,
-				}),
+				eslint_d,
 				none_ls.builtins.formatting.gofumpt,
 				none_ls.builtins.formatting.goimports,
 				none_ls.builtins.formatting.golines,

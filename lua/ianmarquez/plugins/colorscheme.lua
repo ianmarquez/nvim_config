@@ -1,11 +1,19 @@
 return {
 	{
 		"Mofiqul/dracula.nvim",
-		name = "dracula",
 		priority = 1000,
+		name = "dracula",
 		config = function()
 			-- load the colorscheme here
-			vim.cmd([[colorscheme dracula]])
+			vim.cmd([[colorscheme dracula-soft]])
+		end,
+	},
+	{
+		"folke/tokyonight.nvim",
+		name = "tokyonight",
+		config = function()
+			-- load the colorscheme here
+			-- vim.cmd([[colorscheme tokyonight]])
 		end,
 	},
 	{
