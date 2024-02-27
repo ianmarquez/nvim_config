@@ -5,9 +5,10 @@ return {
 		local lualine = require("lualine")
 		local lazy_status = require("lazy.status") -- to configure lazy pending updates count
 		local lualine_dracula = require("lualine.themes.dracula")
+		local lualine_catppuccin = require("lualine.themes.catppuccin")
 		lualine.setup({
 			options = {
-				theme = lualine_dracula,
+				theme = lualine_catppuccin,
 			},
 			sections = {
 				lualine_c = {

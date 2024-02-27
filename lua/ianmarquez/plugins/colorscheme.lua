@@ -1,11 +1,10 @@
 return {
 	{
 		"Mofiqul/dracula.nvim",
-		priority = 1000,
 		name = "dracula",
 		config = function()
 			-- load the colorscheme here
-			vim.cmd([[colorscheme dracula-soft]])
+			-- vim.cmd([[colorscheme dracula-soft]])
 		end,
 	},
 	{
@@ -26,10 +25,11 @@ return {
 	},
 	{
 		"catppuccin/nvim",
+		priority = 1000,
 		name = "catppuccin",
 		config = function()
 			-- load the colorscheme here
-			-- vim.cmd([[colorscheme catppuccin-frappe]])
+			vim.cmd([[colorscheme catppuccin-macchiato]])
 		end,
 	},
 	{
