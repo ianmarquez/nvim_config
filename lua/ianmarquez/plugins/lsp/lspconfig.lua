@@ -171,5 +171,11 @@ return {
 				},
 			},
 		})
+
+		vim.filetype.add({
+			pattern = {
+				[".env.*"] = "sh",
+			},
+		})
 	end,
 }
