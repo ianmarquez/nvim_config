@@ -12,7 +12,6 @@ return {
 
 		-- for conciseness
 		local formatting = none_ls.builtins.formatting -- to setup formatters
-		local diagnostics = none_ls.builtins.diagnostics -- to setup linters
 
 		-- to setup format on save
 		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
