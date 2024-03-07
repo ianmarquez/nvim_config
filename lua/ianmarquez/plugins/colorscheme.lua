@@ -1,6 +1,7 @@
 return {
 	{
 		"Mofiqul/dracula.nvim",
+		event = "VeryLazy",
 		name = "dracula",
 		config = function()
 			-- load the colorscheme here
@@ -9,6 +10,7 @@ return {
 	},
 	{
 		"folke/tokyonight.nvim",
+		event = "VeryLazy",
 		name = "tokyonight",
 		config = function()
 			-- load the colorscheme here
@@ -17,6 +19,7 @@ return {
 	},
 	{
 		"rose-pine/neovim",
+		event = "VeryLazy",
 		name = "rose-pine",
 		config = function()
 			-- load the colorscheme here
@@ -25,19 +28,11 @@ return {
 	},
 	{
 		"catppuccin/nvim",
-		priority = 1000,
 		name = "catppuccin",
+		priority = 1000,
 		config = function()
 			-- load the colorscheme here
 			vim.cmd([[colorscheme catppuccin-macchiato]])
-		end,
-	},
-	{
-		"olimorris/onedarkpro.nvim",
-		name = "onedarkpro",
-		config = function()
-			-- load the colorscheme here
-			-- vim.cmd([[colorscheme onedark]])
 		end,
 	},
 }

@@ -9,6 +9,7 @@ return {
 		local lspconfig = require("lspconfig")
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 		local util = require("lspconfig/util")
+		local telescope_builtin = require("telescope.builtin")
 
 		local keymap = vim.keymap
 
@@ -17,16 +18,16 @@ return {
 			opts.buffer = bufnr
 
 			opts.desc = "Show LSP references"
-			keymap.set("n", "gf", "<cmd>Lspsaga finder<CR>", opts) -- show definition, references
+			keymap.set("n", "gf", telescope_builtin.lsp_references, opts) -- show definition, references
 
 			opts.desc = "Go to declaration"
-			keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
+			keymap.set("n", "gD", telescope_builtin.lsp_type_definitions, opts) -- go to declaration
 
 			opts.desc = "Show LSP definitions"
-			keymap.set("n", "gd", vim.lsp.buf.definition, opts) -- see definition and make edits in window
+			keymap.set("n", "gd", telescope_builtin.lsp_definitions, opts) -- see definition and make edits in window
 
 			opts.desc = "See available code actions"
-			keymap.set({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts) -- see available code actions
+			keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions
 
 			opts.desc = "Smart rename"
 			keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
@@ -65,8 +66,6 @@ return {
 		-- 	capabilities = capabilities,
 		-- 	on_attach = on_attach,
 		-- })
-
-		-- configure css server
 		lspconfig["cssls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
@@ -93,6 +92,7 @@ return {
 		lspconfig["svelte"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			filetypes = { "svelte" },
 		})
 
 		-- configure prisma orm server
