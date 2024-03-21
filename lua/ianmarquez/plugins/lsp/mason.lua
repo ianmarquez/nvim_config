@@ -1,9 +1,12 @@
 return {
 	"williamboman/mason.nvim",
+	cmd = "Mason",
+	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 		"jayp0521/mason-null-ls.nvim",
 	},
+	build = ":MasonUpdate",
 	config = function()
 		-- import mason
 		local mason = require("mason")

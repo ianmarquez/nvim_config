@@ -16,7 +16,7 @@ return {
 		opts.desc = "Remove go struct tags"
 		keymap.set("n", "<leader>gtr", ":GoRmTag<cr>", opts)
 	end,
-	event = { "CmdlineEnter" },
+	event = { "BufReadPre *.go", "BufNewFile *.go", "CmdlineEnter *.go" },
 	ft = { "go", "gomod" },
 	build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
 }

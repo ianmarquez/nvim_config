@@ -5,6 +5,8 @@ return {
 		"rcarriga/nvim-notify",
 		"NvChad/nvim-colorizer.lua", -- colorizer
 	},
+	lazy = true,
+	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		local noice = require("noice")
 		local keymap = vim.keymap

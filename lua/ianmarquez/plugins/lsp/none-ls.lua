@@ -3,6 +3,7 @@ return {
 	dependencies = {
 		"nvimtools/none-ls-extras.nvim",
 	},
+	lazy = true,
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		-- import null-ls plugin

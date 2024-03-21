@@ -1,5 +1,6 @@
 return {
 	"Exafunction/codeium.vim", -- codium
+	lazy = true,
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		local keymap = vim.keymap

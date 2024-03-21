@@ -17,7 +17,7 @@ return {
 				update_root = true,
 			},
 			view = {
-				width = 40,
+				width = 30,
 			},
 			renderer = {
 				indent_markers = { enable = true },
