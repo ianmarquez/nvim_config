@@ -2,7 +2,7 @@ return {
 	"nvim-telescope/telescope.nvim",
 	branch = "0.1.x",
 	lazy = true,
-	event = { "VimEnter" },
+	event = "VeryLazy",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
@@ -32,7 +32,7 @@ return {
 		})
 
 		telescope.load_extension("fzf")
-		-- telescope.load_extension("noice")
+		telescope.load_extension("noice")
 		telescope.load_extension("ui-select")
 
 		local keymap = vim.keymap
@@ -60,7 +60,7 @@ return {
 		opts.desc = "Find Symbols in Current File"
 		keymap.set("n", "<leader>o", "<cmd>Telescope lsp_document_symbols<cr>", opts)
 
-		-- opts.desc = "Find Noice Notifications"
-		-- keymap.set("n", "<leader>fn", "<cmd>Telescope noice<cr>", opts)
+		opts.desc = "Find Noice Notifications"
+		keymap.set("n", "<leader>fn", "<cmd>Telescope noice<cr>", opts)
 	end,
 }

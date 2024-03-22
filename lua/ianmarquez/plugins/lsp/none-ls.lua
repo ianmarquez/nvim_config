@@ -26,7 +26,9 @@ return {
 					extra_filetypes = { "svelte" },
 				}), -- js/ts formatter
 				formatting.stylua, -- lua formatter
-				eslint_d,
+				eslint_d.with({
+					only_local = "node_modules/.bin",
+				}),
 				none_ls.builtins.formatting.gofumpt,
 				none_ls.builtins.formatting.goimports,
 				none_ls.builtins.formatting.golines,

@@ -6,7 +6,7 @@ return {
 		"NvChad/nvim-colorizer.lua", -- colorizer
 	},
 	lazy = true,
-	event = { "BufReadPre", "BufNewFile" },
+	event = "VeryLazy",
 	config = function()
 		local noice = require("noice")
 		local keymap = vim.keymap

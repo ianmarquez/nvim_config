@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ { import = "ianmarquez.plugins" }, { import = "ianmarquez.plugins.lsp" } }, {
 	install = {
-		colorscheme = { "dracula" },
+		colorscheme = { "catpuccin" },
 	},
 	checker = {
 		enabled = true,
