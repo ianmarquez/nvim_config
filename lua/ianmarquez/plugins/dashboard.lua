@@ -5,7 +5,6 @@ return {
 		vim.g.dashboard_default_executive = "telescope"
 		local dashboard = require("dashboard")
 		dashboard.setup({
-			shortcut_type = "number",
 			change_to_vcs_root = true,
 			theme = "hyper",
 			config = {

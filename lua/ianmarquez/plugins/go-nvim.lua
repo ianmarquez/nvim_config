@@ -5,6 +5,9 @@ return {
 		"neovim/nvim-lspconfig",
 		"nvim-treesitter/nvim-treesitter",
 	},
+	build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
+	event = { "BufReadPre *.go", "BufNewFile *.go", "CmdlineEnter *.go" },
+	ft = { "go", "gomod" },
 	config = function()
 		require("go").setup()
 		local keymap = vim.keymap
@@ -16,7 +19,4 @@ return {
 		opts.desc = "Remove go struct tags"
 		keymap.set("n", "<leader>gtr", ":GoRmTag<cr>", opts)
 	end,
-	event = { "BufReadPre *.go", "BufNewFile *.go", "CmdlineEnter *.go" },
-	ft = { "go", "gomod" },
-	build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
 }

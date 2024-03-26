@@ -22,10 +22,10 @@ return {
 			root_dir = none_ls_utils.root_pattern(".null-ls-root", "Makefile", ".git", "package.json"),
 			-- setup formatters & linters
 			sources = {
+        formatting.stylua, -- lua formatter
 				formatting.prettier.with({
 					extra_filetypes = { "svelte" },
 				}), -- js/ts formatter
-				formatting.stylua, -- lua formatter
 				eslint_d.with({
 					only_local = "node_modules/.bin",
 				}),
