@@ -1,6 +1,6 @@
 return {
 	"glepnir/dashboard-nvim",
-	event = "VimEnter",
+	event = "UIEnter",
 	config = function()
 		vim.g.dashboard_default_executive = "telescope"
 		local dashboard = require("dashboard")

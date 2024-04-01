@@ -2,7 +2,7 @@ return {
 	"akinsho/bufferline.nvim",
 	version = "*",
 	dependencies = "nvim-tree/nvim-web-devicons",
-	event = "VimEnter",
+	event = "UIEnter",
 	keys = {
 		{ "<leader>to", "<cmd>BufferLineSortByTabs<cr>", desc = "Order Buffer By Directory", mode = "n" },
 		{ "<S-l>", "<cmd>BufferLineCycleNext<cr>", desc = "Next Buffer", mode = "n" },

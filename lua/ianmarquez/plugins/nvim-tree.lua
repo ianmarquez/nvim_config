@@ -25,7 +25,7 @@ return {
 			},
 			renderer = {
 				indent_markers = { enable = true },
-				root_folder_label = false,
+				root_folder_label = true,
 			},
 			actions = {
 				open_file = {
