@@ -61,25 +61,20 @@ return {
 			on_attach = on_attach,
 		})
 
-		-- -- configure typescript server with plugin
-		-- lspconfig["tsserver"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- })
 		lspconfig["cssls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
-			settings = {
-				css = { validate = true, lint = {
-					unknownAtRules = "ignore",
-				} },
-				scss = { validate = true, lint = {
-					unknownAtRules = "ignore",
-				} },
-				less = { validate = true, lint = {
-					unknownAtRules = "ignore",
-				} },
-			},
+			-- settings = {
+			-- 	css = { validate = true, lint = {
+			-- 		unknownAtRules = "ignore",
+			-- 	} },
+			-- 	scss = { validate = true, lint = {
+			-- 		unknownAtRules = "ignore",
+			-- 	} },
+			-- 	less = { validate = true, lint = {
+			-- 		unknownAtRules = "ignore",
+			-- 	} },
+			-- },
 		})
 
 		-- configure tailwindcss server

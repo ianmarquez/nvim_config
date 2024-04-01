@@ -4,10 +4,9 @@ return {
 	lazy = true,
 	event = "VeryLazy",
 	dependencies = {
-		"nvim-lua/plenary.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+		"nvim-lua/plenary.nvim",
 		"nvim-tree/nvim-web-devicons",
-		"nvim-telescope/telescope-ui-select.nvim",
 	},
 	config = function()
 		local telescope = require("telescope")
@@ -33,7 +32,6 @@ return {
 
 		telescope.load_extension("fzf")
 		telescope.load_extension("noice")
-		telescope.load_extension("ui-select")
 
 		local keymap = vim.keymap
 		local opts = { noremap = true, silent = true }
