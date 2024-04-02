@@ -2,9 +2,9 @@ return {
 	"voldikss/vim-floaterm",
 	lazy = true,
 	keys = {
-		{ "<F1>", ":FloatermToggle<cr>" },
-		{ "<leader>tn", ":FloatermNew<cr>" },
-		{ "<leader>tg", ":FloatermNew lazygit<cr>" },
+		{ "<F1>", ":FloatermToggle<cr>", desc = "Toggle Floaterm" },
+		{ "<leader>tn", ":FloatermNew<cr>", desc = "New Floaterm" },
+		{ "<leader>tg", ":FloatermNew lazygit<cr>", desc = "Open lazygit" },
 	},
 	init = function()
 		vim.g.floaterm_keymap_toggle = "<F1>"

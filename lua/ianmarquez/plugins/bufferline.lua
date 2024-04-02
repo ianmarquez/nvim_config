@@ -17,20 +17,17 @@ return {
 		-- 		{ "<leader>tf", "<cmd>BufferClose!<cr>", desc = "Force Close Current Buffer", mode = "n" },
 		{ "<leader>tp", "<cmd>BufferLineTogglePin<cr>", desc = "Pin Current Buffer", mode = "n" },
 	},
-	config = function()
-		local bufferline = require("bufferline")
-		bufferline.setup({
-			options = {
-				diagnostics = "nvim_lsp",
-				show_buffer_close_icons = false,
-				offsets = {
-					{
-						filetype = "NvimTree",
-						text = "File Explorer",
-						text_align = "center",
-					},
+	opts = {
+		options = {
+			diagnostics = "nvim_lsp",
+			show_buffer_close_icons = false,
+			offsets = {
+				{
+					filetype = "NvimTree",
+					text = "File Explorer",
+					text_align = "center",
 				},
 			},
-		})
-	end,
+		},
+	},
 }
