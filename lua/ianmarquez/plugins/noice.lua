@@ -48,11 +48,26 @@ return {
 			view = "cmdline_popup", -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
 		},
 		messages = {
-			enabled = false,
+			enabled = true,
+			view = "notify", -- default view for messages
+			view_error = "notify", -- view for errors
+			view_warn = "notify", -- view for warnings
+			view_history = "messages", -- view for :messages
+			view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
 		},
 		notify = {
 			enabled = true,
 			view = "notify",
+		},
+		routes = {
+			{
+				filter = {
+					event = "msg_show",
+					kind = "",
+					find = "written",
+				},
+				opts = { skip = true },
+			},
 		},
 		lsp = {
 			override = {

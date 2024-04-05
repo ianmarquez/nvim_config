@@ -26,15 +26,14 @@ return {
 			},
 			format_on_save = {
 				lsp_fallback = true,
-				timeout_ms = 500,
+				async = true,
 			},
 		})
 
 		vim.keymap.set({ "n", "v" }, "<leader>mf", function()
 			conform.format({
-				async = false,
+				async = true,
 				lsp_fallback = true,
-				timeout_ms = 500,
 			})
 		end, { desc = "Format current selection" })
 	end,
