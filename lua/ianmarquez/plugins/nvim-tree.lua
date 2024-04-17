@@ -18,7 +18,8 @@ return {
 			update_root = true,
 		},
 		view = {
-			width = 50,
+			width = 40,
+			side = "right",
 			-- relativenumber = true,
 		},
 		renderer = {
