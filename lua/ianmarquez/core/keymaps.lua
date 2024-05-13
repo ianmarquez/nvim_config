@@ -7,11 +7,11 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move text up" })
 
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "No highlight" })
 keymap.set("n", "x", '"_x"')
-keymap.set("n", "J", "mzJ`z")
+keymap.set("n", "J", "mzJ`z", { desc = "Delete line break" })
 keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<C-u>", "<C-u>zz")
-keymap.set("n", "n", "nzzzv")
-keymap.set("n", "N", "nzzzv")
+keymap.set("n", "n", "nzzzv", { desc = "Next highlighted word" })
+keymap.set("n", "N", "Nzzzv", { desc = "Previous highlighted word" })
 keymap.set(
 	"n",
 	"<leader>s",
