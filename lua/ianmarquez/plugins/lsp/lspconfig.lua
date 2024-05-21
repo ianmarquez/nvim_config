@@ -43,6 +43,9 @@ return {
 
 			opts.desc = "Restart LSP"
 			keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+
+			opts.desc = "Typescript Organize Imports"
+			keymap.set("n", "<leader>oi", ":OrganizeImports<CR>", opts) -- mapping to restart lsp if necessary
 		end
 
 		-- used to enable autocompletion (assign to every lsp server config)
@@ -54,6 +57,26 @@ return {
 			local hl = "DiagnosticSign" .. type
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
+
+		local function organize_imports()
+			local params = {
+				command = "_typescript.organizeImports",
+				arguments = { vim.api.nvim_buf_get_name(0) },
+				title = "",
+			}
+			vim.lsp.buf.execute_command(params)
+		end
+
+		lspconfig.tsserver.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			commands = {
+				OrganizeImports = {
+					organize_imports,
+					description = "Organize Imports",
+				},
+			},
+		})
 
 		-- configure html server
 		lspconfig["html"].setup({
@@ -145,6 +168,10 @@ return {
 		})
 
 		vim.filetype.add({
+			extension = {
+				mdx = "jsx",
+				keymap = "c",
+			},
 			pattern = {
 				[".env.*"] = "sh",
 			},

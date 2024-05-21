@@ -1,6 +1,7 @@
 return {
 	"akinsho/bufferline.nvim",
 	version = "*",
+	commit = "2cd3984",
 	dependencies = "nvim-tree/nvim-web-devicons",
 	event = "UIEnter",
 	keys = {
