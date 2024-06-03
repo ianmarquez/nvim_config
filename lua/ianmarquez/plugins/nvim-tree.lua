@@ -15,7 +15,7 @@ return {
 	opts = {
 		update_focused_file = {
 			enable = true,
-			update_root = true,
+			update_root = false,
 		},
 		view = {
 			width = 40,
@@ -24,7 +24,7 @@ return {
 		},
 		renderer = {
 			indent_markers = { enable = true },
-			root_folder_label = true,
+			root_folder_label = false,
 		},
 		actions = {
 			open_file = {
