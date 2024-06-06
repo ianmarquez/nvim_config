@@ -19,7 +19,7 @@ return {
 				prompt_prefix = " ",
 				selection_caret = " ",
 				layout_config = {
-					prompt_position = "bottom",
+					prompt_position = "top",
 				},
 				mappings = {
 					i = {
