@@ -1,6 +1,9 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	dependencies = { "nvim-tree/nvim-web-devicons" },
+	dependencies = {
+		"nvim-tree/nvim-web-devicons",
+		"meuter/lualine-so-fancy.nvim",
+	},
 	event = { "BufReadPre", "BufNewFile" },
 	lazy = true,
 	opts = {
@@ -21,6 +24,7 @@ return {
 				},
 			},
 			lualine_x = {
+				{ "fancy_macro" },
 				{
 					require("lazy.status").updates,
 					cond = require("lazy.status").has_updates,
