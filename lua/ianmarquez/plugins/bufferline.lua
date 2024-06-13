@@ -15,7 +15,6 @@ return {
 			mode = "n",
 		},
 		{ "<leader>tx", "<cmd>BufferLinePickClose<cr>", desc = "Close Buffer by Ordinal", mode = "n" },
-		-- 		{ "<leader>tf", "<cmd>BufferClose!<cr>", desc = "Force Close Current Buffer", mode = "n" },
 		{ "<leader>tp", "<cmd>BufferLineTogglePin<cr>", desc = "Pin Current Buffer", mode = "n" },
 	},
 	opts = {
