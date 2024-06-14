@@ -14,7 +14,7 @@ return {
 
 		telescope.setup({
 			defaults = {
-				file_ignore_patterns = { "node_modules", "%.lock" },
+				file_ignore_patterns = { "node_modules", "%.lock", "^vendor/", "/vendor", "vendor/" },
 				sorting_strategy = "ascending",
 				prompt_prefix = " ",
 				selection_caret = " ",

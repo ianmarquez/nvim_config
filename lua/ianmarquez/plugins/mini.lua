@@ -52,18 +52,4 @@ return {
 			},
 		},
 	},
-	-- {
-	-- 	"echasnovski/mini.tabline",
-	-- 	version = false,
-	-- 	event = "UIEnter",
-	-- 	keys = {
-	-- 		{ "<S-l>", "<cmd>bNext<cr>", desc = "Next Buffer", mode = "n" },
-	-- 		{ "<S-h>", "<cmd>bprevious<cr>", desc = "Previous Buffer", mode = "n" },
-	-- 		{ "<leader>tx", "<cmd>bdelete | brewind<cr>", desc = "Close Buffer by Ordinal", mode = "n" },
-	-- 		{ "<leader>tc", "<cmd>%bdelete | e# | bd# <cr>", desc = "Close Buffer by Ordinal", mode = "n" },
-	-- 	},
-	-- 	config = function()
-	-- 		require("mini.tabline").setup()
-	-- 	end,
-	-- },
 }
