@@ -1,5 +1,8 @@
 local opt = vim.opt -- for conciseness
 
+opt.title = true
+opt.cmdheight = 0
+
 -- line numbers
 opt.relativenumber = true
 opt.number = true
