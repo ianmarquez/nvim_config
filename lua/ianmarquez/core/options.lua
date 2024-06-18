@@ -27,6 +27,7 @@ opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
 
+-- scrolling
 opt.scrolloff = 10
 
 -- backspace
