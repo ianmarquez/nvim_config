@@ -82,6 +82,8 @@ return {
 			},
 		})
 
+		lspconfig.gleam.setup({})
+
 		-- configure html server
 		lspconfig["html"].setup({
 			capabilities = capabilities,
