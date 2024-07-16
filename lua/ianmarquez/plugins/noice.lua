@@ -6,9 +6,9 @@ return {
 		"NvChad/nvim-colorizer.lua", -- colorizer
 	},
 	keys = {
-		{ "<leader>no", "<cmd>Noice<CR>", desc = "Open notification history" },
-		{ "<leader>nd", "<cmd>Noice dismiss<CR>", desc = "Dismiss all notifications" },
-		{ "<leader>ne", "<cmd>Noice errors<CR>", desc = "Open error notifications" },
+		-- { "<leader>no", "<cmd>Noice<CR>", desc = "Open notification history" },
+		-- { "<leader>nd", "<cmd>Noice dismiss<CR>", desc = "Dismiss all notifications" },
+		-- { "<leader>ne", "<cmd>Noice errors<CR>", desc = "Open error notifications" },
 	},
 	lazy = true,
 	event = "VeryLazy",
