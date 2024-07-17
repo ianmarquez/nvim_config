@@ -52,4 +52,25 @@ return {
 			},
 		},
 	},
+
+	{
+		"echasnovski/mini.indentscope",
+		version = "*",
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			vim.cmd([[ highlight MiniIndentscopeSymbol guifg=#a7d4d5]])
+			require("mini.indentscope").setup({
+				draw = {
+					delay = 10,
+					animation = function()
+						return 0
+					end,
+				},
+				options = {
+					indent_at_cursor = false,
+				},
+				symbol = "│",
+			})
+		end,
+	},
 }
