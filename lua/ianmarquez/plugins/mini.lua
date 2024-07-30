@@ -1,5 +1,5 @@
 return {
-	{ "echasnovski/mini.bufremove", version = false },
+	{ "echasnovski/mini.bufremove", event = { "BufReadPre", "BufNewFile" }, version = false },
 	{
 		"echasnovski/mini.pairs",
 		event = "VeryLazy",
